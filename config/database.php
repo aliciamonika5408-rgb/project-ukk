@@ -135,4 +135,4 @@ function getMonthlyData($year = null) {
     
     return ['masuk' => $masuk, 'keluar' => $keluar];
 }
-?>
+

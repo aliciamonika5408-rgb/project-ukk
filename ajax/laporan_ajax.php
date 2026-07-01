@@ -9,11 +9,22 @@ $tgl_m    = clean($_GET['tgl_mulai'] ?? date('Y-m-01'));
 $tgl_a    = clean($_GET['tgl_akhir'] ?? date('Y-m-d'));
 
 if ($action === 'excel') {
+    // Disable error reporting to prevent notices/warnings from corrupting the Excel file
+    error_reporting(0);
+    ini_set('display_errors', 0);
+
+    // Clear any previous output buffers to avoid "headers already sent" issues and corrupt file downloads
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+
     $filename = "Laporan_Barang_" . ucfirst($jenis) . "_" . date('Ymd') . ".xls";
     header("Content-Type: application/vnd.ms-excel");
     header("Content-Disposition: attachment; filename=\"$filename\"");
     header("Pragma: no-cache");
     header("Expires: 0");
+    header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+    header("Content-Transfer-Encoding: binary");
 
     $db = getDB();
 
@@ -98,4 +109,3 @@ if ($action === 'excel') {
 }
 
 echo json_encode(['success'=>false,'message'=>'Aksi tidak dikenal!']);
-?>
