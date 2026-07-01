@@ -10,11 +10,6 @@ $rows = $db->query("
 $barang_list  = $db->query("SELECT id, kode_barang, nama_barang, satuan, harga_jual, stok FROM barang WHERE stok > 0 ORDER BY nama_barang");
 $no_transaksi = generateNoTransaksi('BK', 'barang_keluar', 'no_transaksi');
 ?>
-<div style="margin-left:auto;">
-    <button class="btn btn-primary" onclick="openModal('modalTambah')">
-        <i class="fas fa-plus"></i> Tambah Barang Keluar
-    </button>
-</div>
 
 <div class="card">
     <div class="table-toolbar">

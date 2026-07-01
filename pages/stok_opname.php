@@ -11,11 +11,6 @@ $rows = $db->query("
 $barang_list  = $db->query("SELECT id, kode_barang, nama_barang, satuan, stok FROM barang ORDER BY nama_barang");
 $no_opname    = generateNoTransaksi('OPN', 'stok_opname', 'no_opname');
 ?>
-<div style="margin-left:auto;">
-    <button class="btn btn-primary" onclick="openModal('modalTambah')">
-        <i class="fas fa-plus"></i> Tambah Stok Opname
-    </button>
-</div>
 
 <div class="card">
     <div class="table-toolbar">

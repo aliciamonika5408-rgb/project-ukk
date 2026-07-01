@@ -4,11 +4,6 @@ if (!isAdmin()) { header('Location: ../index.php?page=dashboard'); exit(); }
 $db   = getDB();
 $rows = $db->query("SELECT * FROM users ORDER BY created_at DESC");
 ?>
-<div style="margin-left:auto;">
-    <button class="btn btn-primary" onclick="openModal('modalTambah')">
-        <i class="fas fa-plus"></i> Tambah User
-    </button>
-</div>
 
 <div class="card">
     <div class="table-toolbar">

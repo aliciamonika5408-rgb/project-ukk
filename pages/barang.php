@@ -15,12 +15,6 @@ $rows = $db->query("
 
 $kategori_list = $db->query("SELECT * FROM kategori ORDER BY nama_kategori");
 ?>
-<!-- Page Action Button -->
-<div style="margin-left:auto;">
-    <button class="btn btn-primary" onclick="openModal('modalTambah')">
-        <i class="fas fa-plus"></i> Tambah Barang
-    </button>
-</div>
 
 <?php if ($filter_menipis): ?>
 <div class="stok-alert" style="margin-bottom:16px;">

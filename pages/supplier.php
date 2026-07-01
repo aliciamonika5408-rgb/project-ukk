@@ -8,11 +8,6 @@ $rows = $db->query("
     GROUP BY s.id ORDER BY s.created_at DESC
 ");
 ?>
-<div style="margin-left:auto;">
-    <button class="btn btn-primary" onclick="openModal('modalTambah')">
-        <i class="fas fa-plus"></i> Tambah Supplier
-    </button>
-</div>
 
 <div class="card">
     <div class="table-toolbar">

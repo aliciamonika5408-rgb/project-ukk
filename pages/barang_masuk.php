@@ -12,11 +12,6 @@ $barang_list   = $db->query("SELECT id, kode_barang, nama_barang, satuan, harga_
 $supplier_list = $db->query("SELECT id, kode_supplier, nama_supplier FROM supplier ORDER BY nama_supplier");
 $no_transaksi  = generateNoTransaksi('BM', 'barang_masuk', 'no_transaksi');
 ?>
-<div style="margin-left:auto;">
-    <button class="btn btn-primary" onclick="openModal('modalTambah')">
-        <i class="fas fa-plus"></i> Tambah Barang Masuk
-    </button>
-</div>
 
 <div class="card">
     <div class="table-toolbar">
