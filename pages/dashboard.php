@@ -2,7 +2,8 @@
 // pages/dashboard.php
 $db    = getDB();
 $stats = getDashboardStats();
-$chart = getMonthlyData(date('Y'));
+$selected_year = isset($_GET['year']) ? (int)$_GET['year'] : (int)date('Y');
+$chart = getMonthlyData($selected_year);
 
 // Recent barang masuk
 $recent_masuk = $db->query("
@@ -52,16 +53,21 @@ $chart_kat_data   = json_encode($kat_data);
 // Get current month name in Indonesian
 $bulan_indo = ['','Januari','Februari','Maret','April','Mei','Juni',
                'Juli','Agustus','September','Oktober','November','Desember'];
-$current_month = $bulan_indo[(int)date('m')] . ' ' . date('Y');
+$current_month = $bulan_indo[(int)date('m')] . ' ' . $selected_year;
 ?>
 
 <!-- ===== HERO BANNER ===== -->
 <div class="dashboard-hero">
     <div class="hero-date-wrapper">
-        <div class="hero-date-box">
+        <div class="hero-date-box" onclick="toggleYearDropdown()">
             <i class="fas fa-calendar-alt"></i>
             <span><?= $current_month ?></span>
             <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 6px; color: var(--text-light);"></i>
+        </div>
+        <div id="yearDropdown" class="year-dropdown">
+            <a href="index.php?page=dashboard&year=2024" class="dropdown-item <?= $selected_year === 2024 ? 'active' : '' ?>"><?= $bulan_indo[(int)date('m')] ?> 2024</a>
+            <a href="index.php?page=dashboard&year=2025" class="dropdown-item <?= $selected_year === 2025 ? 'active' : '' ?>"><?= $bulan_indo[(int)date('m')] ?> 2025</a>
+            <a href="index.php?page=dashboard&year=2026" class="dropdown-item <?= $selected_year === 2026 ? 'active' : '' ?>"><?= $bulan_indo[(int)date('m')] ?> 2026</a>
         </div>
     </div>
     <span class="hero-sparkles">✦ ✧ ✦</span>
@@ -292,7 +298,7 @@ $current_month = $bulan_indo[(int)date('m')] . ' ' . date('Y');
     <div class="card span-2">
         <div class="card-header">
             <span class="card-title">
-                <i class="fas fa-chart-line"></i> Grafik Transaksi Bulanan <?= date('Y') ?>
+                <i class="fas fa-chart-line"></i> Grafik Transaksi Bulanan <?= $selected_year ?>
             </span>
             <div style="display:flex; gap:14px; font-size:12px;">
                 <span style="display:flex;align-items:center;gap:5px;">
@@ -509,4 +515,22 @@ if (katLabels.length > 0 && document.getElementById('miniKategoriChart')) {
         }
     });
 }
+
+function toggleYearDropdown() {
+    const dropdown = document.getElementById('yearDropdown');
+    if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const box = document.querySelector('.hero-date-box');
+    const dropdown = document.getElementById('yearDropdown');
+    if (box && dropdown && !box.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+    }
+});
 </script>

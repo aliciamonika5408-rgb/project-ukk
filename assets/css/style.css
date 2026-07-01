@@ -163,7 +163,7 @@ ul,ol{list-style:none}
     padding: 24px 28px;
     margin-bottom: 18px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid var(--border-light);
     min-height: 140px;
 }
@@ -500,5 +500,46 @@ textarea.form-control{resize:vertical;min-height:80px}
     .sidebar,.navbar,.page-header .btn,.table-actions,.pagination-wrapper,.dashboard-hero,.sidebar-overlay{display:none!important}
     .main-content{margin-left:0}
     .page-content{padding:0}
-    .card{box-shadow:none;border:1px solid #ddd}
 }
+
+/* ============ YEAR DROPDOWN ============ */
+.year-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: var(--bg-white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    min-width: 130px;
+    overflow: hidden;
+    padding: 4px 0;
+    animation: dropdownFadeIn 0.2s var(--ease);
+}
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.year-dropdown .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--text-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s var(--ease);
+    text-decoration: none;
+}
+.year-dropdown .dropdown-item:hover {
+    background: var(--primary-lighter);
+    color: var(--primary-darker);
+}
+.year-dropdown .dropdown-item.active {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+}
+
