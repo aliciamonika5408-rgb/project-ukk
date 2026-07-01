@@ -118,3 +118,13 @@ Gunakan akun di bawah ini untuk menguji berbagai tingkat hak akses sistem:
 - **Page-scoped CSS:** Tag body menggunakan penanda dinamis `<body class="page-<?= $page_param ?>">` sehingga styling halaman tertentu dapat dikustomisasi secara terisolasi tanpa merusak layout halaman lainnya di `style.css`.
 
 <br clear="right">
+
+---
+
+## 📝 Hak Cipta & Kreator (Copyright & Creator)
+Aplikasi ini dikembangkan dan disiapkan sepenuhnya untuk proyek ujian sekolah oleh:
+- **Nama:** **Alicia Monika**
+- **Username GitHub:** [@aliciamonika5408-rgb](https://github.com/aliciamonika5408-rgb)
+- **Lisensi:** UKK Project RPL 2026
+
+*Dibuat dengan penuh cinta 💜 dan didekorasi dengan kucing-kucing lucu untuk menyemangati manajemen gudang Anda.*
