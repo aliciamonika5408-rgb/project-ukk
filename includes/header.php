@@ -26,7 +26,7 @@ $title_info = $page_titles[$page_param] ?? ['Halaman', ''];
     <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 </head>
-<body>
+<body class="page-<?= $page_param ?>">
 
 <!-- Toast Container -->
 <div class="toast-container" id="toastContainer"></div>

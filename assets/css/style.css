@@ -126,7 +126,7 @@ ul,ol{list-style:none}
 .btn-logout:hover{background:rgba(155,133,196,.12)}
 
 /* ============ MAIN ============ */
-.main-content{flex:1;margin-left:var(--sidebar-w);display:flex;flex-direction:column;min-height:100vh;transition:.3s var(--ease)}
+.main-content{flex:1;margin-left:var(--sidebar-w);display:flex;flex-direction:column;min-height:100vh;transition:.3s var(--ease);min-width:0}
 
 /* ============ NAVBAR ============ */
 .navbar{height:var(--nav-h);background:var(--bg-white);border-bottom:1px solid var(--border-light);display:flex;align-items:center;padding:0 20px;gap:12px;position:sticky;top:0;z-index:900;box-shadow:var(--shadow-sm)}
@@ -148,7 +148,7 @@ ul,ol{list-style:none}
 .navbar-user .fa-chevron-down{font-size:9px;color:var(--text-light)}
 
 /* ============ PAGE CONTENT ============ */
-.page-content{flex:1;padding:18px 22px}
+.page-content{flex:1;padding:18px 22px;min-width:0;width:100%}
 .page-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;gap:12px;flex-wrap:wrap}
 .page-title h1{font-size:18px;font-weight:700;color:var(--text-dark);line-height:1.3}
 .page-title p{font-size:11px;color:var(--text-light);margin-top:2px}
@@ -329,7 +329,7 @@ ul,ol{list-style:none}
 .table-search i{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--text-light);font-size:11px;pointer-events:none}
 .data-table{width:100%;border-collapse:collapse;font-size:12px}
 .data-table th{padding:10px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--text-light);background:var(--bg-main);border-bottom:1px solid var(--border-light);white-space:nowrap}
-.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--text-dark);vertical-align:middle}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--text-dark);vertical-align:middle;white-space:nowrap}
 .data-table tr:last-child td{border-bottom:none}
 .data-table tbody tr{transition:.15s ease}
 .data-table tbody tr:hover{background:rgba(196,176,224,.06)}
@@ -541,5 +541,73 @@ textarea.form-control{resize:vertical;min-height:80px}
     background: var(--primary);
     color: #fff;
     font-weight: 600;
+}
+
+/* ============ RESPONSIVE LAYOUT CLASSES ============ */
+.stats-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.toolbar-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.laporan-filter-form {
+    display: flex;
+    gap: 14px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.laporan-btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+@media (max-width: 992px) {
+    .stats-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid-3 {
+        grid-template-columns: 1fr;
+    }
+    .toolbar-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 8px;
+    }
+    .toolbar-actions .form-control,
+    .toolbar-actions select.form-control,
+    .toolbar-actions input.form-control,
+    .toolbar-actions .btn {
+        flex: 1;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .laporan-filter-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .laporan-filter-form .form-group {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .laporan-btn-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 6px;
+    }
+    .laporan-btn-group .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 4px;
+    }
 }
 

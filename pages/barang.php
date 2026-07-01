@@ -31,7 +31,7 @@ $kategori_list = $db->query("SELECT * FROM kategori ORDER BY nama_kategori");
             <i class="fas fa-magnifying-glass"></i>
             <input type="text" id="searchBarang" placeholder="Cari barang..." oninput="filterTable()">
         </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div class="toolbar-actions">
             <select class="form-control" id="filterKategori" onchange="filterTable()" style="width:auto;padding:9px 32px 9px 12px;font-size:12px;">
                 <option value="">Semua Kategori</option>
                 <?php $kategori_list->data_seek(0); while($k = $kategori_list->fetch_assoc()): ?>

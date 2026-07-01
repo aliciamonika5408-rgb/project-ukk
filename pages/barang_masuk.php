@@ -19,7 +19,7 @@ $no_transaksi  = generateNoTransaksi('BM', 'barang_masuk', 'no_transaksi');
             <i class="fas fa-magnifying-glass"></i>
             <input type="text" placeholder="Cari transaksi..." oninput="filterTbl(this,'tblBM')">
         </div>
-        <div style="display:flex;gap:8px;">
+        <div class="toolbar-actions">
             <input type="date" class="form-control" id="filterTgl" onchange="filterByDate()" style="width:auto;padding:9px 12px;font-size:12px;" title="Filter tanggal">
             <button class="btn btn-secondary btn-sm" onclick="document.getElementById('filterTgl').value='';filterByDate()">
                 <i class="fas fa-rotate"></i> Reset

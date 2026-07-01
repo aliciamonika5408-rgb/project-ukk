@@ -52,7 +52,7 @@ while ($r = $data->fetch_assoc()) {
 <!-- Filter Form -->
 <div class="card" style="margin-bottom:18px;">
     <div class="card-body" style="padding:18px 22px;">
-        <form method="GET" action="" style="display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;">
+        <form method="GET" action="" class="laporan-filter-form">
             <input type="hidden" name="page" value="laporan">
             <div class="form-group" style="margin:0;flex:1;min-width:150px;">
                 <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-light);">Jenis Laporan</label>
@@ -69,7 +69,7 @@ while ($r = $data->fetch_assoc()) {
                 <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-light);">Tanggal Akhir</label>
                 <input type="date" class="form-control" name="tgl_akhir" value="<?= $tgl_akhir ?>" style="margin-top:6px;">
             </div>
-            <div style="display:flex;gap:8px;">
+            <div class="laporan-btn-group">
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-magnifying-glass"></i> Tampilkan
                 </button>
@@ -85,7 +85,7 @@ while ($r = $data->fetch_assoc()) {
 </div>
 
 <!-- Summary Cards -->
-<div class="stats-grid" style="margin-bottom:18px;grid-template-columns:repeat(3,1fr);">
+<div class="stats-grid stats-grid-3" style="margin-bottom:18px;">
     <div class="stat-card pink">
         <div class="stat-header">
             <div>
