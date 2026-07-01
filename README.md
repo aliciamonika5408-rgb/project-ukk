@@ -1,5 +1,9 @@
 # 🐾 Stock Gudang — Kawaii Pastel Purple Theme 💜
 
+<p align="center">
+  <img src="assets/img/cat-hi.png" width="120" alt="Cat Mascot">
+</p>
+
 Aplikasi **Manajemen Inventaris & Stok Gudang** yang didesain secara responsif dengan tema estetika *Pastel Purple* yang anggun serta dihiasi oleh ilustrasi kucing yang menggemaskan. Aplikasi ini dirancang khusus untuk kebutuhan **Ujian Kompetensi Keahlian (UKK) Rekayasa Perangkat Lunak**.
 
 ---
@@ -21,14 +25,22 @@ Halaman laporan per periode untuk barang masuk dan keluar dengan fitur ekspor ke
 ---
 
 ## 🎨 Tema & Estetika Visual
+
+<img src="assets/img/cat-hello.png" width="100" align="right" alt="Cat Hello" style="margin-left: 15px;">
+
 - **Palet Warna:** Perpaduan manis warna *Lavender Muda*, *Pink Peach*, dan warna dasar putih bersih.
 - **Dekorasi Maskot:** Karakter kucing lucu (`cat-laptop`, `cat-hi`, `cat-peek`) yang membuat tampilan aplikasi terasa premium, ceria, dan tidak membosankan.
 - **Efek Transisi:** Animasi halus pada kartu statistik saat halaman dimuat (*hover effects*) dan bayangan lembut (*soft shadows*) pada modal data.
 - **Desain Responsif:** Layout dioptimalkan 100% untuk browser layar PC maupun smartphone (mobile) menggunakan teknik Grid/Flexbox tanpa framework CSS luar.
 
+<br clear="right">
+
 ---
 
 ## ✨ Fitur Utama Aplikasi
+
+<img src="assets/img/cat-laptop.png" width="100" align="right" alt="Cat Laptop" style="margin-left: 15px;">
+
 1. **📊 Dashboard Real-time:**
    - Counter otomatis jumlah barang, supplier, barang masuk, dan barang keluar.
    - Grafik Transaksi Bulanan menggunakan **Chart.js** yang dapat difilter dinamis berdasarkan tahun (**2024, 2025, 2026**) melalui tombol kalender.
@@ -54,13 +66,20 @@ Halaman laporan per periode untuk barang masuk dan keluar dengan fitur ekspor ke
      - `Gudang` $\rightarrow$ Akses manajemen data barang, transaksi, dan stok opname.
      - `Viewer` $\rightarrow$ Hak akses baca-saja (*read-only*) untuk dashboard dan tabel data.
 
+<br clear="right">
+
 ---
 
 ## 🛠️ Spesifikasi Teknologi
+
+<img src="assets/img/cat-peek.png" width="80" align="right" alt="Cat Peek" style="margin-left: 15px;">
+
 - **Bahasa Pemrograman:** PHP 8.x (Native MySQLi Object-Oriented)
 - **Desain Antarmuka:** HTML5, Vanilla CSS3 (Responsive Grid & Flexbox), FontAwesome v6.5
 - **Mesin Database:** MySQL / MariaDB
 - **Library Frontend:** Chart.js (melalui CDN lokal), Google Fonts (Poppins & Playfair Display)
+
+<br clear="right">
 
 ---
 
@@ -91,6 +110,11 @@ Gunakan akun di bawah ini untuk menguji berbagai tingkat hak akses sistem:
 ---
 
 ## 👩‍💻 Catatan Penguji UKK (Arsitektur Kode Bersih)
+
+<img src="assets/img/cat-sleep.png" width="100" align="right" alt="Cat Sleep" style="margin-left: 15px;">
+
 - **Struktur Rapi & Konsisten:** Seluruh AJAX request dipisahkan ke dalam folder `ajax/` tanpa tag penutup PHP (`?>`) untuk menghindari spasi tak terlihat (*whitespaces*) yang dapat merusak header HTTP.
 - **Modular & DRY (Don't Repeat Yourself):** Navigasi aktif di sidebar diatur dinamis menggunakan PHP di [sidebar.php](file:///c:/XAMPP/htdocs/ukk%20cia/includes/sidebar.php) tanpa redundansi kode JavaScript.
 - **Page-scoped CSS:** Tag body menggunakan penanda dinamis `<body class="page-<?= $page_param ?>">` sehingga styling halaman tertentu dapat dikustomisasi secara terisolasi tanpa merusak layout halaman lainnya di `style.css`.
+
+<br clear="right">
