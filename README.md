@@ -1,77 +1,96 @@
 # 🐾 Stock Gudang — Kawaii Pastel Purple Theme 💜
 
-An adorable, clean, and highly responsive **Inventory Management System (Manajemen Stock Gudang)** built with a lovely pastel purple theme and cute cat illustration accents. This project is specifically optimized, structured, and refactored for the **UKK (Ujian Kompetensi Keahlian) Practical Exam**.
+Aplikasi **Manajemen Inventaris & Stok Gudang** yang didesain secara responsif dengan tema estetika *Pastel Purple* yang anggun serta dihiasi oleh ilustrasi kucing yang menggemaskan. Aplikasi ini dirancang khusus untuk kebutuhan **Ujian Kompetensi Keahlian (UKK) Rekayasa Perangkat Lunak**.
 
 ---
 
-## 🎨 Theme & Aesthetics
-- **Color Palette:** Soft Pastel Lavender, Peach-Pink, and warm whites.
-- **Accents:** Cute cat mascots (`cat-laptop`, `cat-hi`, `cat-peek`) that cheer you on as you manage the warehouse!
-- **Transitions:** Smooth hover transitions, floating animations for stat cards, and modern glassmorphism details.
-- **Responsive:** 100% optimized for mobile screens with horizontal scrolling tables and stacked form toolbars.
+## 📸 Tampilan Aplikasi (Screenshots)
+
+### 📊 Dashboard Interaktif & Filter Kalender
+Tampilan utama yang menyajikan ringkasan statistik stok, grafik mingguan/bulanan (Chart.js), dan filter kalender dropdown interaktif.
+![Dashboard Screenshot](assets/img/screenshots/dashboard.png)
+
+### 📦 Manajemen Data Inventaris (CRUD Barang)
+Pengelolaan katalog barang lengkap dengan filter status stok (Menipis, Aman, Habis), upload foto, dan input stok minimum.
+![Data Barang Screenshot](assets/img/screenshots/barang.png)
+
+### 📈 Laporan Stok & Cetak PDF / Excel
+Halaman laporan per periode untuk barang masuk dan keluar dengan fitur ekspor ke dokumen Excel asli serta layout cetak ramah printer.
+![Laporan Screenshot](assets/img/screenshots/laporan.png)
 
 ---
 
-## ✨ Features
-1. **📊 Interactive Dashboard:**
-   - Real-time inventory status counters (Total Items, Suppliers, Goods In/Out).
-   - Dynamic Yearly Transaction Chart (Chart.js) with calendar selector (**Juli 2024, 2025, 2026**).
-   - Lists of recent Goods Inbound and Outbound.
-2. **📦 Inventory Management (CRUD Data Barang):**
-   - Manage items with item code, name, category, unit, buying/selling price, minimum stock, and profile photo upload.
-   - Smart alert triggers when items hit their minimum stock limit.
-3. **🏷️ Category & Supplier CRUD:**
-   - Manage categories with dependency safety (prevents deleting categories containing active items).
-   - Manage supplier contact directories.
-4. **📥 Transaction Logging (Barang Masuk & Keluar):**
-   - Log goods movement and dynamically update database inventory counts.
-   - Custom transactional number auto-generator (e.g. `BM-2026-0001`).
-   - Integrated date filter and quick reset tool.
-5. **📝 Stock Opname:**
-   - Reconcile database inventory counts with actual physical warehouse counts.
-6. **📈 Report Center (Laporan):**
-   - Period-based transaction report generator.
-   - Clean tabular reports with **Cetak/Print** view and fully working **Export to Excel** download stream.
-7. **🔒 User Management & Multi-role Access:**
-   - Register, login, and profile avatars.
-   - Role-based permissions: `Admin` (full access), `Gudang` (transactions & stock opname), and `Viewer` (read-only charts & tables).
+## 🎨 Tema & Estetika Visual
+- **Palet Warna:** Perpaduan manis warna *Lavender Muda*, *Pink Peach*, dan warna dasar putih bersih.
+- **Dekorasi Maskot:** Karakter kucing lucu (`cat-laptop`, `cat-hi`, `cat-peek`) yang membuat tampilan aplikasi terasa premium, ceria, dan tidak membosankan.
+- **Efek Transisi:** Animasi halus pada kartu statistik saat halaman dimuat (*hover effects*) dan bayangan lembut (*soft shadows*) pada modal data.
+- **Desain Responsif:** Layout dioptimalkan 100% untuk browser layar PC maupun smartphone (mobile) menggunakan teknik Grid/Flexbox tanpa framework CSS luar.
 
 ---
 
-## 🛠️ Technology Stack
-- **Backend:** PHP 8.x (Native Object-Oriented MySQLi)
-- **Frontend:** HTML5, CSS3 (Vanilla Responsive Grid/Flexbox), JavaScript (Vanilla ES6)
-- **Database:** MySQL / MariaDB
-- **Libraries:** Chart.js, FontAwesome v6.5, Poppins & Playfair Google Fonts
+## ✨ Fitur Utama Aplikasi
+1. **📊 Dashboard Real-time:**
+   - Counter otomatis jumlah barang, supplier, barang masuk, dan barang keluar.
+   - Grafik Transaksi Bulanan menggunakan **Chart.js** yang dapat difilter dinamis berdasarkan tahun (**2024, 2025, 2026**) melalui tombol kalender.
+2. **📦 CRUD Data Barang:**
+   - Mengelola data barang (Kode, Nama, Kategori, Satuan, Harga Beli, Harga Jual, Stok Minimum, dan Foto).
+   - Indikator status stok dinamis (Aman, Menipis, Habis) berdasarkan nilai stok minimum.
+3. **🏷️ CRUD Kategori & Supplier:**
+   - Pengelompokan barang berdasarkan kategori dengan validasi pengaman (kategori tidak bisa dihapus jika masih ada barang di dalamnya).
+   - Pengelolaan kontak dan detail supplier.
+4. **📥 Transaksi Barang Masuk & Keluar:**
+   - Pencatatan barang masuk dan keluar yang secara otomatis memperbarui (*update*) stok barang di database.
+   - Generator nomor transaksi otomatis (contoh: `BM-2026-0001` untuk barang masuk).
+   - Filter pencarian cepat dan filter berbasis rentang tanggal.
+5. **📝 Stok Opname (Revaluasi Fisik):**
+   - Halaman khusus untuk mencocokkan stok sistem komputer dengan jumlah fisik barang di gudang.
+6. **📈 Laporan & Export:**
+   - Rekap transaksi berdasarkan rentang tanggal.
+   - Fitur cetak langsung (*print layout*) dan ekspor ke file Microsoft Excel (*binary stream* bersih dari bug corrupt).
+7. **🔒 Sistem Autentikasi & Hak Akses:**
+   - Halaman login dengan validasi data dan enkripsi password aman (`password_hash`).
+   - Tingkatan hak akses:
+     - `Admin` $\rightarrow$ Akses penuh ke seluruh fitur dan Manajemen Akun Pengguna.
+     - `Gudang` $\rightarrow$ Akses manajemen data barang, transaksi, dan stok opname.
+     - `Viewer` $\rightarrow$ Hak akses baca-saja (*read-only*) untuk dashboard dan tabel data.
 
 ---
 
-## 🚀 Installation & Setup
-1. **Clone or Download the Project:**
-   Move the folder to your local server directory (e.g., `C:/xampp/htdocs/ukk-cia/`).
-2. **Database Setup:**
-   - Open phpMyAdmin.
-   - Create a new database named `stock_gudang`.
-   - Import the database schema from the file: `database/stock_gudang.sql`.
-3. **Configuration:**
-   - Open `config/database.php`.
-   - Update your MySQL credentials (host, user, password, database name) if necessary.
-4. **Run the App:**
-   - Start Apache and MySQL in XAMPP.
-   - Open your browser and navigate to `http://localhost/ukk-cia/`.
+## 🛠️ Spesifikasi Teknologi
+- **Bahasa Pemrograman:** PHP 8.x (Native MySQLi Object-Oriented)
+- **Desain Antarmuka:** HTML5, Vanilla CSS3 (Responsive Grid & Flexbox), FontAwesome v6.5
+- **Mesin Database:** MySQL / MariaDB
+- **Library Frontend:** Chart.js (melalui CDN lokal), Google Fonts (Poppins & Playfair Display)
 
 ---
 
-## 🔑 Login Accounts (Default Credentials)
-| Role | Username | Password |
+## 🚀 Panduan Instalasi & Jalankan Aplikasi
+1. **Unduh Proyek:**
+   Salin atau ekstrak folder proyek ini ke dalam folder server lokal Anda, contoh: `C:\xampp\htdocs\ukk-cia\`.
+2. **Setup Database:**
+   - Buka browser lalu akses **phpMyAdmin** (`http://localhost/phpmyadmin/`).
+   - Buat database baru bernama `stock_gudang`.
+   - Pilih database tersebut, klik tab **Import**, lalu pilih file SQL dari folder proyek: `database/stock_gudang.sql`. Klik **Go/Import**.
+3. **Konfigurasi Server:**
+   - Jika kredensial database MySQL Anda berbeda dari default, buka file [database.php](file:///c:/XAMPP/htdocs/ukk%20cia/config/database.php) dan sesuaikan username/password MySQL Anda.
+4. **Jalankan:**
+   - Aktifkan Apache dan MySQL di XAMPP Control Panel.
+   - Buka browser Anda dan akses alamat: `http://localhost/ukk-cia/`.
+
+---
+
+## 🔑 Akun Uji Coba Default
+Gunakan akun di bawah ini untuk menguji berbagai tingkat hak akses sistem:
+
+| Peran (Role) | Username | Password |
 |---|---|---|
-| 👑 Admin | `admin` | `password` |
+| 👑 Administrator | `admin` | `password` |
 | 📦 Staff Gudang | `gudang` | `password` |
 | 👁️ Viewer | `viewer` | `password` |
 
 ---
 
-## 👩‍💻 UKK Exam Notes (Catatan Penguji)
-- **Clean Architecture:** Navigations are handled cleanly on the server-side via PHP in `includes/sidebar.php` for robust rendering.
-- **Standards Compliant:** Trailing PHP closing tags (`?>`) have been removed from all AJAX scripts under the `ajax/` folder to prevent output buffer pollution and prevent file download corruption.
-- **Page-scoped CSS:** The `<body>` element contains a dynamic class prefix `page-<?= $page_param ?>` to allow custom style adjustments in `assets/css/style.css` without breaking other views.
+## 👩‍💻 Catatan Penguji UKK (Arsitektur Kode Bersih)
+- **Struktur Rapi & Konsisten:** Seluruh AJAX request dipisahkan ke dalam folder `ajax/` tanpa tag penutup PHP (`?>`) untuk menghindari spasi tak terlihat (*whitespaces*) yang dapat merusak header HTTP.
+- **Modular & DRY (Don't Repeat Yourself):** Navigasi aktif di sidebar diatur dinamis menggunakan PHP di [sidebar.php](file:///c:/XAMPP/htdocs/ukk%20cia/includes/sidebar.php) tanpa redundansi kode JavaScript.
+- **Page-scoped CSS:** Tag body menggunakan penanda dinamis `<body class="page-<?= $page_param ?>">` sehingga styling halaman tertentu dapat dikustomisasi secara terisolasi tanpa merusak layout halaman lainnya di `style.css`.
