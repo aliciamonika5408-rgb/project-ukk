@@ -217,18 +217,6 @@ document.querySelectorAll('textarea.form-control').forEach(el => {
     });
 });
 
-// ============ ACTIVE NAV HIGHLIGHT ============
-(function() {
-    const page = new URLSearchParams(window.location.search).get('page') || 'dashboard';
-    document.querySelectorAll('.nav-item').forEach(item => {
-        const href = item.getAttribute('href') || '';
-        if (href.includes(`page=${page}`)) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-})();
 
 // ============ PRINT HANDLER ============
 window.addEventListener('beforeprint', function() {

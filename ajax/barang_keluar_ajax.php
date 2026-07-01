@@ -62,4 +62,3 @@ switch ($action) {
     default:
         echo json_encode(['success'=>false,'message'=>'Aksi tidak dikenal!']);
 }
-?>
